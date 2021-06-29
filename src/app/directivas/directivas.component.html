@@ -1,0 +1,39 @@
+<p>directivas works!</p>
+<table>
+    <tr *ngFor="let valor of lista">
+        <td>
+            {{valor}}
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr *ngFor="let valor of lista; let indice=index">
+        <td>
+            {{indice+1}}
+        </td>
+        <td>
+            {{valor}}
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr *ngFor="let valor of lista; let impar = odd; let par=even;"
+            [ngClass]="{verde:par, celeste:impar}">
+        <td>
+            {{valor}}
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<h2 *ngIf="estado; else sino">Usted esta autorizado</h2>
+<ng-template #sino><h2>Usted no esta autorizado</h2></ng-template>
+<br>
+<br>
+<ng-template *ngIf="estado; then opcion1 else opcion2"></ng-template>
+<ng-template #opcion1><h2>Usted esta autorizado</h2></ng-template>
+<ng-template #opcion2><h2>Usted no esta autorizado</h2></ng-template>

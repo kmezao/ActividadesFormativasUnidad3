@@ -3,5 +3,9 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<app-crud></app-crud>
-
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark"><div class="fw-bold">DATOS DE CONTACTO</div></li>
+  </ul>
+  <ul class="list-group" *ngFor="let persona of elementos">
+    <li class="list-group-item">{{persona.nombre}} {{persona.apellido}} / {{persona.correo}}</li>
+  </ul>

@@ -1,0 +1,32 @@
+<p>crud works!</p>
+
+<div>
+    <h2>Operaciones Crud sobre los productos</h2>
+    <table border="1" *ngIf="verificarProductos(); else nohayproductos">
+        <tr>
+            <td>Codigo</td>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Eliminar</td>
+            <td>Seleccionar</td>
+        </tr>
+        <tr *ngFor="let prod of productos">
+            <td>{{prod.codigo}}</td>
+            <td>{{prod.nombre}}</td>
+            <td>{{prod.precio}}</td>
+            <td><button (click)="eliminar(prod)">Eliminar</button></td>
+            <td><button (click)="seleccionar(prod)">Selecionar</button></td>
+        </tr>
+    </table>
+    <ng-template #nohayproductos><p>No se han encontrado productos</p></ng-template>
+    <br>
+    <hr>
+    <br>
+    <div>
+        <p>Codigo:<input type="text" [(ngModel)]="prod.codigo"/></p>
+        <p>Nombre:<input type="text" [(ngModel)]="prod.nombre"/></p>
+        <p>Precio:<input type="text" [(ngModel)]="prod.precio"/></p>
+    </div>
+    <p><button (click)="agregar()">Agregar</button></p>
+    <p><button (click)="modificar()">Modificar</button></p>
+</div>

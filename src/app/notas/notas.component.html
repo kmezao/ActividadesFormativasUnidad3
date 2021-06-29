@@ -1,0 +1,51 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<div class="container">
+    <h1 align="center">Promedio de notas</h1>
+    <div class="abs-center">
+<form [formGroup]="formulario" (ngSubmit)="enviar()">
+    <div class="input-group input-group-sm mb-2">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Rut</span>
+        <input type="text" formControlName="rut" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-2">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+        <input type="text" formControlName="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div formGroupName="notas">
+        <div class="input-group input-group-sm mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nota 1:</span>
+            <input type="text" formControlName="nota1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nota 2:</span>
+            <input type="text" formControlName="nota2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nota 3:</span>
+            <input type="text" formControlName="nota3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nota 4:</span>
+            <input type="text" formControlName="nota4" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nota examen:</span>
+            <input type="text" formControlName="nota5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+    </div>
+    <p>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </p>
+    <div>
+        <p>{{salida}}</p>
+        <p>{{salida1}}</p>
+    </div>
+</form>
+</div>
+</div>
+
